@@ -9,11 +9,14 @@
     "isort",
     "linebreak",
     "mhutchie",
+    "minversion",
     "mypy",
     "nopasswd",
     "oderwat",
     "pycache",
     "pyproject",
+    "pytest",
+    "testpaths",
     "usernamehw"
   ]
 }

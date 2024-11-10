@@ -1,0 +1,45 @@
+{
+  "name": "parse-actions",
+  "build": {
+    "dockerfile": "./Dockerfile"
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "EditorConfig.EditorConfig",
+        "eamodio.gitlens",
+        "mhutchie.git-graph",
+        "ms-python.black-formatter",
+        "ms-python.flake8",
+        "ms-python.isort",
+        "ms-python.mypy-type-checker",
+        "ms-python.python",
+        "oderwat.indent-rainbow",
+        "streetsidesoftware.code-spell-checker",
+        "usernamehw.errorlens"
+      ]
+    }
+  },
+  "containerEnv": {
+    "BRANCH_FILE": "/home/developer/git-hold-branch/branch.json"
+  },
+  "containerUser": "developer",
+  "features": {
+    "ghcr.io/devcontainers/features/git:1": {},
+    "ghcr.io/devcontainers/features/github-cli:1": {},
+    "ghcr.io/devcontainers-contrib/features/poetry:2": {}
+  },
+  "mounts": [
+    {
+      "type": "volume",
+      "source": "devcontainer-branch-volume",
+      "target": "/home/developer/git-hold-branch"
+    },
+    {
+      "type": "volume",
+      "source": "devcontainer-pre-commit-volume",
+      "target": "/home/developer/.cache/pre-commit"
+    }
+  ],
+  "postCreateCommand": ".devcontainer/post-create.sh"
+}
